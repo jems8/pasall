@@ -190,43 +190,24 @@ export default function CategoryDrawer() {
             <Card
               // onMouseLeave={handleProductCardMouseLeave}
               style={{
-                height: "24rem",
-                width: "30rem",
+                height: "23rem",
+                width: "35rem",
                 borderRadius: "1rem",
                 marginTop: "1rem",
-                paddingBottom: "1rem",
+                padding: "1rem",
                 marginLeft: "0rem",
                 cursor: "pointer",
+                display:'flex',
+                flexWrap:'wrap',
+                overflow:'auto',
+                objectFit:'contain'
               }}
             >
-              <List style={{ display: 'grid', gap: '1rem' }}>
                 {selectedCategory.subcategories[selectedSubCategory].map(
                   (product, pIndex) => (
-                    <ListItem
-                      key={pIndex}
-                      onClick={() => handleProductClick(product)}
-                      style={{ flex: '0 0 33.33%', boxSizing: 'border-box', padding: '0.5rem' }}
-                      // onMouseEnter={() => handleSubCategoryHover}
-                      // onMouseLeave={handleSubCategoryMouseLeave}
-                    >
-                      <Typography
-                        variant="body2"
-                        sx={{
-                          display: "flex",
-                          justifyContent: "space-between",
-                          fontSize: "12px",
-                          width: "100%",
-                          color:
-                            selectedCategory === product ? "red" : "inherit",
-                        }}
-                      >
-                         <ProductImageCard {...product} />
-
-                      </Typography>
-                    </ListItem>
+                    <ProductImageCard {...product} key={pIndex} />
                   )
                 )}
-              </List>
             </Card>
           )}
         </Grid>
@@ -240,8 +221,8 @@ const ProductImageCard = (props) => {
 
   return (
     <div style={{ display: "flex", flexDirection: "column" ,alignItems: 'center'}}>
-      <img src={image} style={{ height: "100px", width: "100px" ,borderRadius: '10rem',padding: '1rem'}} />
-      <Typography style={{fontSize: '12px',textAlign: "center",marginTop: '0.5rem'}}>{label}</Typography>
+      <img src={image} style={{ height: "50px", width: "50px" ,borderRadius: '10rem',padding: '1rem 2rem 1rem 2rem'}} />
+      <Typography style={{fontSize: '12px',textAlign: "center",padding: '0rem 1rem 1rem 1rem'}}>{label}</Typography>
     </div>
   );
 }
