@@ -1,28 +1,15 @@
 import React, { useState } from "react";
-import { MenuList } from "../../constants/MenuConstant";
-
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import { Card, Typography } from "@mui/material";
-import Grid from "@mui/material/Grid";
-import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-
 import { useNavigate } from "react-router-dom";
 
-// const products = {
-//   Clothing: ["Makeup Kit", "Skincare Products", "Fragrances"],
-//   'Lifestyle': ['Home Fitness Equipment', 'Outdoor Gear', 'Books'],
+import Card from "@mui/material/Card";
+import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+import Grid from "@mui/material/Grid";
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
+import Typography from "@mui/material/Typography";
 
-// }
-
-//   // Lifestyle: ['Home Fitness Equipment', 'Outdoor Gear', 'Books'],
-//   // 'Proudly Nepali': ['Handicrafts', 'Local Art', 'Traditional Clothing'],
-//   // Fashion: ['Clothing', 'Shoes', 'Accessories'],
-//   // 'New on Daraz': ['Latest Gadgets', 'Innovative Products', 'Tech Accessories'],
-//   // 'Free Delivery': ['Selected Items with Free Delivery'],
-//   // 'Everyday Low Price': ['Budget-Friendly Products', 'Discounted Items'],
-//   // 'Electronic Bazaar': ['Mobile Phones', 'Laptops', 'Camera Accessories'],
-//   // 'Global Collection': ['International Electronics', 'Fashion Brands', 'Imported Goods'],
+import { MenuList } from "../../constants/MenuConstant";
+import { styles } from "./styles";
 
 export default function CategoryDrawer() {
   const navigate = useNavigate();
@@ -65,37 +52,23 @@ export default function CategoryDrawer() {
   return (
     <Grid container spacing={12}>
       <Grid item xs={3}>
-        <Card
-          style={{
-            height: "20rem",
-            width: "15rem",
-            borderRadius: "1rem",
-            marginTop: "1rem",
-            paddingBottom: "5rem",
-            marginLeft: "25rem",
-            cursor: "pointer",
-          }}
-        >
+        <Card sx={styles.categoryCardStyles}>
           <List>
             {MenuList.map((category, index) => (
               <ListItem
                 key={index}
                 onMouseEnter={() => handleCategoryMouseEnter(category)}
                 style={{
-                  display: "flex",
-                  justifyContent: "space-between",
+                  ...styles.listItemCategory,
                   background:
                     selectedCategory === category &&
                     (isCategoryHovered ? "#e0e0e0" : "white"),
                 }}
-                // onMouseLeave={() => handleCategoryMouseLeave()}
               >
                 <Typography
                   variant="body2"
                   sx={{
-                    fontSize: "12px",
-
-                    // width: "80%",
+                    ...styles.typographyCategory,
                     color: selectedCategory === category ? "red" : "inherit",
                   }}
                 >
@@ -104,7 +77,6 @@ export default function CategoryDrawer() {
                 {selectedCategory === category && (
                   <ChevronRightIcon
                     style={{
-                      fontSize: "20px",
                       color: selectedCategory === category ? "red" : "inherit",
                     }}
                   />
@@ -122,21 +94,11 @@ export default function CategoryDrawer() {
           }}
           item
           xs={9}
-          style={{ display: "flex" }}
+          style={styles.subCategoryGrid}
         >
           {!!selectedCategory && (
             <Card
-              style={{
-                height: "24rem",
-                width: "15rem",
-                borderRadius: "1rem",
-                marginTop: "1rem",
-                paddingBottom: "1rem",
-                marginLeft: "10rem",
-                cursor: "pointer",
-              }}
-              // onMouseEnter={handleProductCardHover}
-              // onMouseLeave={handleProductCardMouseLeave}
+              style={styles.subCategoryCard}
             >
               <List>
                 {Object.keys(selectedCategory.subcategories).map(
@@ -147,10 +109,8 @@ export default function CategoryDrawer() {
                       onMouseEnter={() =>
                         handleSubCategoryHover(subcategoryKey)
                       }
-                      // onMouseLeave={handleSubCategoryMouseLeave}
                       style={{
-                        display: "flex",
-                        justifyContent: "space-between",
+                        ...styles.listItemSubcategory,
                         background:
                           selectedSubCategory === subcategoryKey &&
                           (isSubCategoryHovered ? "#e0e0e0" : "white"),
@@ -159,8 +119,7 @@ export default function CategoryDrawer() {
                       <Typography
                         variant="body2"
                         sx={{
-                          fontSize: "12px",
-                          width: "100%",
+                          ...styles.typographySubcategory,
                           color:
                             selectedSubCategory === subcategoryKey
                               ? "red"
@@ -172,7 +131,6 @@ export default function CategoryDrawer() {
                       {selectedSubCategory === subcategoryKey && (
                         <ChevronRightIcon
                           style={{
-                            fontSize: "20px",
                             color:
                               selectedSubCategory === subcategoryKey
                                 ? "red"
@@ -188,26 +146,13 @@ export default function CategoryDrawer() {
           )}
           {!!isSubCategoryHovered && (
             <Card
-              // onMouseLeave={handleProductCardMouseLeave}
-              style={{
-                height: "23rem",
-                width: "35rem",
-                borderRadius: "1rem",
-                marginTop: "1rem",
-                padding: "1rem",
-                marginLeft: "0rem",
-                cursor: "pointer",
-                display:'flex',
-                flexWrap:'wrap',
-                overflow:'auto',
-                objectFit:'contain'
-              }}
+              style={styles.productsCard}
             >
-                {selectedCategory.subcategories[selectedSubCategory].map(
-                  (product, pIndex) => (
-                    <ProductImageCard {...product} key={pIndex} />
-                  )
-                )}
+              {selectedCategory?.subcategories[selectedSubCategory].map(
+                (product, pIndex) => (
+                  <ProductImageCard {...product} key={pIndex} />
+                )
+              )}
             </Card>
           )}
         </Grid>
@@ -220,9 +165,16 @@ const ProductImageCard = (props) => {
   const { image, label } = props;
 
   return (
-    <div style={{ display: "flex", flexDirection: "column" ,alignItems: 'center'}}>
-      <img src={image} style={{ height: "50px", width: "50px" ,borderRadius: '10rem',padding: '1rem 2rem 1rem 2rem'}} />
-      <Typography style={{fontSize: '12px',textAlign: "center",padding: '0rem 1rem 1rem 1rem'}}>{label}</Typography>
+    <div>
+      <img
+        src={image}
+        style={styles.imageControl}
+      />
+      <Typography
+        style={styles.imageTypography}
+      >
+        {label}
+      </Typography>
     </div>
   );
-}
+};
