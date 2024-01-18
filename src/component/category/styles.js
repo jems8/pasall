@@ -1,5 +1,5 @@
 export const styles = {
-  categoryCardStyles: {
+  categoryCard: {
     height: "20rem",
     width: "15rem",
     borderRadius: "1rem",
@@ -16,10 +16,6 @@ export const styles = {
 
   typographyCategory: {
     fontSize: "12px",
-  },
-
-  subCategoryGrid: {
-    display: "flex",
   },
 
   subCategoryCard: {

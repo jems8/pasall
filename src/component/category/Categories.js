@@ -52,7 +52,7 @@ export default function CategoryDrawer() {
   return (
     <Grid container spacing={12}>
       <Grid item xs={3}>
-        <Card sx={styles.categoryCardStyles}>
+        <Card sx={styles.categoryCard}>
           <List>
             {MenuList.map((category, index) => (
               <ListItem
@@ -94,7 +94,7 @@ export default function CategoryDrawer() {
           }}
           item
           xs={9}
-          style={styles.subCategoryGrid}
+          container
         >
           {!!selectedCategory && (
             <Card
@@ -148,7 +148,7 @@ export default function CategoryDrawer() {
             <Card
               style={styles.productsCard}
             >
-              {selectedCategory?.subcategories[selectedSubCategory].map(
+              {selectedCategory?.subcategories?.[selectedSubCategory].map(
                 (product, pIndex) => (
                   <ProductImageCard {...product} key={pIndex} />
                 )
