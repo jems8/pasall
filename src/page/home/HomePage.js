@@ -9,6 +9,7 @@ import CustomFooter from "../../component/footer/index";
 
 import { styles } from "./style";
 import ProductCategories from "../../component/category/ProductCategories";
+import Navigation from "../../component/navigation/Navigation";
 import Carousel from "../../component/carousal/Carousal";
 import { styles } from "./style";
 
@@ -17,6 +18,7 @@ const HomePage = () => {
 
   return (
     <>
+    <Navigation/>
       <Box style={styles.homePageMainBox}>
         <Categories />
         <Box style={styles.carouselBox}>
