@@ -1,6 +1,6 @@
 export const styles = {
   categoryCard: {
-    height: "20rem",
+    height: "24rem",
     width: "15rem",
     borderRadius: "1rem",
     marginTop: "1rem",
@@ -39,7 +39,7 @@ export const styles = {
   },
 
   productsCard: {
-    height: "23rem",
+    height: "24rem",
     width: "35rem",
     borderRadius: "1rem",
     marginTop: "1rem",
@@ -64,4 +64,9 @@ export const styles = {
     textAlign: "center",
     padding: "0rem 1rem 1rem 1rem",
   },
+
+  styleeverytypography:{
+    marginButton: '1rem',
+    fontSize: '12px'
+  }
 };

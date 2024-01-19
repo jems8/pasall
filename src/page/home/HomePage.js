@@ -7,8 +7,10 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent"
 
 import  Categories  from "../../component/category/Categories";
+import { Footer1, Footer2 } from "../../component/footer";
 
-const HomePage = () => {
+
+const HomePage = () => {  
   const { products } = useSelector((state) => state.products);
   const displayProduct = products.slice(0, 6);
 
@@ -38,6 +40,9 @@ const HomePage = () => {
           style={{ maxWidth: "40%", marginLeft: "5px", marginRight: "8rem" }}
         />
       </Card>
+      
+      <Footer2/>
+      <Footer1/>
     </>
   );
 };
