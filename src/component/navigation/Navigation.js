@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 
-import  Link  from "react-router-dom";
+import  {Link}  from "react-router-dom";
 
 import { style } from "./style";
 
