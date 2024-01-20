@@ -1,5 +1,4 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
 
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
@@ -7,141 +6,134 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 
-import { styles } from "./styles";
+import { stylesF2 } from "./styles";
 
 const Footer2 = () => {
+  const paymentOptions =[
+    { name: "eSewa", imageSrc: "/esewaimg.png" },
+    { name: "Visa", imageSrc: "/visaimg.png" },
+    { name: "IME Pay", imageSrc: "/imepayimg.png" },
+    { name: "Mastercard", imageSrc: "/mastercardimg.png" },
+  ];
+
   return (
     <Grid container spacing={2}>
-      <Grid item xs={3} style={{ padding: "5rem" }}>
-        <Typography
-          variant="h2"
-          style={{ fontSize: "18px", marginBottom: "1rem", color: "red" }}
-        >
+      <Grid item xs={3} style={stylesF2.footerGridItem}>
+        <Typography variant="h2" style={stylesF2.everyHeadingTypology}>
           Customer Care
         </Typography>
 
-        <Typography style={{ fontSize: "14px" }}>Help Center</Typography>
+        <Typography style={stylesF2.someTypology}>Help Center</Typography>
 
-        <Typography style={{ fontSize: "14px" }}>How to Buy</Typography>
+        <Typography style={stylesF2.someTypology}>How to Buy</Typography>
 
-        <Typography style={{ fontSize: "14px" }}>Returns & Refunds</Typography>
+        <Typography style={stylesF2.someTypology}>Returns & Refunds</Typography>
 
-        <Typography style={{ fontSize: "14px", marginBottom: "1rem" }}>
-          Contact Us
-        </Typography>
+        <Typography style={stylesF2.contactUsTypography}>Contact Us</Typography>
 
-        <Typography
-          variant="h2"
-          style={{ fontSize: "18px", color: "red", marginBottom: "1rem" }}
-        >
+        <Typography variant="h2" style={stylesF2.everyHeadingTypology}>
           Earn with Daraz
         </Typography>
 
-        <Typography style={{ fontSize: "14px" }}>Daraz University</Typography>
+        <Typography style={stylesF2.someTypology}>Daraz University</Typography>
 
-        <Typography style={{ fontSize: "12px" }}>Sell on Daraz</Typography>
+        <Typography style={stylesF2.someTypology}>Sell on Daraz</Typography>
 
-        <Typography style={{ fontSize: "12px" }}>Code of Conduct</Typography>
+        <Typography style={stylesF2.someTypology}>Code of Conduct</Typography>
       </Grid>
 
-      <Grid item xs={3} style={{ padding: "5rem" }}>
-        <Typography variant="h4" style={{ marginBottom: "1rem", color: "red" }}>
+      <Grid item xs={3} style={stylesF2.footerGridItem}>
+        <Typography variant="h4" style={stylesF2.everyHeadingTypology}>
           Daraz
         </Typography>
 
-        <Typography style={{ fontSize: "14px" }}>About Daraz</Typography>
+        <Typography style={stylesF2.someTypology}>About Daraz</Typography>
 
-        <Typography style={{ fontSize: "14px" }}>Careers</Typography>
+        <Typography style={stylesF2.someTypology}>Careers</Typography>
 
-        <Typography style={{ fontSize: "14px" }}>Daraz Blog</Typography>
+        <Typography style={stylesF2.someTypology}>Daraz Blog</Typography>
 
-        <Typography style={{ fontSize: "14px" }}>Terms & Conditions</Typography>
+        <Typography style={stylesF2.someTypology}>
+          Terms & Conditions
+        </Typography>
 
-        <Typography style={{ fontSize: "14px" }}>Privacy Policy</Typography>
+        <Typography style={stylesF2.someTypology}>Privacy Policy</Typography>
 
-        <Typography style={{ fontSize: "14px" }}>Digital Payments</Typography>
+        <Typography style={stylesF2.someTypology}>Digital Payments</Typography>
 
-        <Typography style={{ fontSize: "14px" }}>
+        <Typography style={stylesF2.someTypology}>
           Daraz Customer University
         </Typography>
 
-        <Typography style={{ fontSize: "14px" }}>
+        <Typography style={stylesF2.someTypology}>
           Daraz Affiliate Program
         </Typography>
 
-        <Typography style={{ fontSize: "14px" }}>Review & Win</Typography>
+        <Typography style={stylesF2.someTypology}>Review & Win</Typography>
 
-        <Typography style={{ fontSize: "14px" }}>Meet the winners</Typography>
+        <Typography style={stylesF2.someTypology}>Meet the winners</Typography>
 
-        <Typography style={{ fontSize: "14px" }}>Realme GT Neo 3</Typography>
+        <Typography style={stylesF2.someTypology}>Realme GT Neo 3</Typography>
       </Grid>
 
       <Grid item container xs={3}>
-        <Grid item xs={12} style={{ padding: "5rem" }}>
-          <Typography
-            variant="h2"
-            style={{ fontSize: "18px", marginBottom: "1rem", color: "red" }}
-          >
+        <Grid item xs={12} style={stylesF2.footerGridItem}>
+          <Typography variant="h2" style={stylesF2.everyHeadingTypology}>
             Daraz International
           </Typography>
 
-          <Typography style={{ fontSize: "14px" }}> Pakistan</Typography>
+          <Typography style={stylesF2.someTypology}> Pakistan</Typography>
 
-          <Typography style={{ fontSize: "14px" }}>Bangladesh</Typography>
+          <Typography style={stylesF2.someTypology}>Bangladesh</Typography>
 
-          <Typography style={{ fontSize: "14px" }}>Sir Lanka</Typography>
+          <Typography style={stylesF2.someTypology}>Sir Lanka</Typography>
 
-          <Typography style={{ fontSize: "14px" }}>Myanmar</Typography>
+          <Typography style={stylesF2.someTypology}>Myanmar</Typography>
 
-          <Typography style={{ fontSize: "14px" }}>Nepal</Typography>
+          <Typography style={stylesF2.contactUsTypography}>Nepal</Typography>
 
-          <Typography
-            style={{ fontSize: "18px", marginTop: "1rem", color: "red" }}
-          >
+          <Typography style={stylesF2.everyHeadingTypology}>
             Payment Method
           </Typography>
 
-          <Typography style={{ marginTop: "1rem" }}>
-            <img src="/esewaimg.png" style={{ height: "20px" ,marginRight: '5px'}} />
-            <img src="/visaimg.png" style={{ height: "20px" ,marginRight: '10px'}} />
-            <img src="/imepayimg.png" style={{ height: "20px" ,marginRight: '10px'}} />
-            <img src="/mastercardimg.png" style={{ height: "20px" }} />
-          </Typography>
+          <>
+            {paymentOptions.map((option, index) => (
+              <img
+                key={index}
+                src={option.imageSrc}
+                alt={option.name}
+                style={stylesF2.image}
+              />
+            ))}
+          </>
 
-          <Typography
-            style={{ fontSize: "18px", marginTop: "1rem", color: "red" }}
-          >
+          <Typography style={stylesF2.verifiedTypography}>
             Verified By
           </Typography>
 
-          <Typography style={{ marginTop: "1rem" }}>
-            <img src="/pciimg.png" style={{ height: "40px",width:'100px' ,marginRight: '5px'}} />
-          </Typography>
-
+          <>
+            <img src="/pciimg.png" style={stylesF2.pciImgTypography} />
+          </>
         </Grid>
       </Grid>
 
-      <Grid item xs={3} style={{ padding: "5rem" }}>
-        <Typography variant="h4" style={{ marginBottom: "1rem" ,color: 'red'}}>
+      <Grid item xs={3} style={stylesF2.footerGridItem}>
+        <Typography variant="h4" style={stylesF2.everyHeadingTypology}>
           Exclusive Deals and Offers!
         </Typography>
 
-        <Typography style={{ color: "red" }}>
-        <img src="darazicon.png" style={{height: '30px',marginRight: '20px'}}/>
-          Happy Shopping</Typography>
+        <Typography style={stylesF2.happyShoppingTypography}>
+          <img src="darazicon.png" style={stylesF2.darazImage} />
+          Happy Shopping
+        </Typography>
 
-        <Typography style={{ fontSize: "12px", marginBottom: "1rem" ,marginLeft: '50px'}}>
-         
+        <Typography style={stylesF2.downloadAppTypography}>
           Download App
         </Typography>
 
-        <Typography
-          style={{ fontSize: "18px", marginBottom: "20px", color: "red" }}
-        >
-          Follow Us
-        </Typography>
+        <Typography style={stylesF2.everyHeadingTypology}>Follow Us</Typography>
 
-        <Typography style={{ fontSize: "18px", marginBottom: "1rem" }}>
+        <Typography style={stylesF2.iconTypography}>
           <InstagramIcon />
           <FacebookIcon />
           <YouTubeIcon />

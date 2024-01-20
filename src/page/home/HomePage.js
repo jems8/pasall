@@ -7,7 +7,8 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent"
 
 import  Categories  from "../../component/category/Categories";
-import { Footer1, Footer2 } from "../../component/footer";
+import CustomFooter from "../../component/footer/index";
+import { styles } from "./style";
 
 
 const HomePage = () => {  
@@ -19,17 +20,12 @@ const HomePage = () => {
     <>
     <Categories/>
       <Card
-        style={{
-          marginTop: "7rem",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-        }}
+        style={styles.categoryCardStyles}
       >
         <CardContent>
           <Typography
             variant="h4"
-            style={{ fontSize: "10rem", margin: "5rem" }}
+            style={styles.cardContainTypography}
           >
             Buy Your Product
           </Typography>
@@ -37,13 +33,12 @@ const HomePage = () => {
         <img
           src="pasall.jpg"
           alt="pasall"
-          style={{ maxWidth: "40%", marginLeft: "5px", marginRight: "8rem" }}
+          style={styles.cardContainImage}
         />
       </Card>
       
-      <Footer2/>
-      <Footer1/>
-    </>
+     <CustomFooter/>
+     </>
   );
 };
 

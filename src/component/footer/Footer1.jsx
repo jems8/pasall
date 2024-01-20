@@ -4,20 +4,20 @@ import { Link, useNavigate } from "react-router-dom";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 
-import { styles } from "./styles";
+import { stylesF1 } from "./styles";
 
 const Footer1 = () => {
   return (
     <Grid container spacing={2}>
-      <Grid item xs={6} style={{ columnCount: 2, padding: "5rem" }}>
+      <Grid item xs={6} style={stylesF1.oneGridItem}>
         <Typography
           variant="h2"
-          style={{ fontSize: "18px", marginBottom: "1rem", color: "#606060" }}
+          style={stylesF1.headingTypography}
         >
-          <h2>Experience Hassle-Free Online Shopping in Nepal with Daraz</h2>
+          Experience Hassle-Free Online Shopping in Nepal with Daraz
         </Typography>
 
-        <Typography style={styles.everyTypography}>
+        <Typography style={stylesF1.everyTypography}>
           E-commerce has evolved over the past few years and since it’s easier
           and more convenient, it is evident that customers are actually
           switching to the trend of online shopping. Daraz, the Nepali shopping
@@ -32,19 +32,19 @@ const Footer1 = () => {
 
         <Typography
           variant="h4"
-          style={{ fontSize: "18px", marginBottom: "1rem" }}
+          style={stylesF1.headingTypography}
         >
-          <h4>Convenient Online Shopping in Nepal</h4>
+          Convenient Online Shopping in Nepal
         </Typography>
 
-        <Typography style={styles.everyTypography}>
+        <Typography style={stylesF1.everyTypography}>
           Daraz is the ultimate Nepali eCommerce website that offers a solution
           for all needs of the customers. It has a wide and assorted range of
           products including clothing, electronics, mobile phones, home and
           living, health and beauty and much more.
         </Typography>
 
-        <Typography style={styles.everyTypography}>
+        <Typography style={stylesF1.everyTypography}>
           Daraz strives to provide customers the best shopping experience in
           Nepal. The online store is updated daily and new products are added
           every day to cater to all your needs. Visit Daraz.com.np to experience
@@ -52,80 +52,80 @@ const Footer1 = () => {
           and get exclusive discounts.
         </Typography>
 
-        <Typography style={styles.everyTypography}>
+        <Typography style={stylesF1.everyTypography}>
           Daraz is a global online marketplace with ecommerce stores in
           Pakistan, Bangladesh, Nepal, Sri Lanka and Myanmar.
         </Typography>
 
-        <Typography style={styles.everyTypography}>
+        <Typography style={stylesF1.everyTypography}>
           General Information:
         </Typography>
 
-        <Typography style={{ fontSize: "12px" }}>
+        <Typography style={stylesF1.someHeadingTypography}>
           Daraz Kaymu Private Limited
         </Typography>
 
-        <Typography style={{ fontSize: "12px" }}>
+        <Typography style={stylesF1.someHeadingTypography}>
           Kathmandu Metropolitan City, Ward No. 11,Thapathali,Kathmandu, Nepal
         </Typography>
 
-        <Typography style={{ fontSize: "12px", marginBottom: "1rem" }}>
+        <Typography style={stylesF1.otherHeadingTypography}>
           VAT No. 602403687
         </Typography>
 
-        <Typography style={styles.everyTypography}>
+        <Typography style={stylesF1.everyTypography}>
           Grievance handling Information:
         </Typography>
 
-        <Typography style={{ fontSize: "12px" }}>
+        <Typography style={stylesF1.someHeadingTypography}>
           Grievance Management
         </Typography>
 
-        <Typography style={{ fontSize: "12px", marginBottom: "1rem" }}>
+        <Typography style={stylesF1.otherHeadingTypography}>
           015970597 (please ask to be redirected to our Grievance Management
           team)
         </Typography>
 
         <Typography
           variant="h4"
-          style={{ fontSize: "18px", marginBottom: "1rem" }}
+          style={stylesF1.headingTypography}
         >
           TRENDING Daraz
         </Typography>
 
-        <Typography style={{ fontSize: "12px" }}>Daraz 11.11 Sale ,</Typography>
+        <Typography style={stylesF1.someHeadingTypography}>Daraz 11.11 Sale ,</Typography>
 
-        <Typography style={{ fontSize: "12px" }}>
+        <Typography style={stylesF1.someHeadingTypography}>
           Dashain Dhamaka , Mobile Week ,
         </Typography>
 
-        <Typography style={{ fontSize: "12px" }}>
+        <Typography style={stylesF1.someHeadingTypography}>
           Valentine's Day Sale , Cricket Streaming ,
         </Typography>
 
-        <Typography style={{ fontSize: "12px" }}>
+        <Typography style={stylesF1.someHeadingTypography}>
           Grocery Shopping in Nepal , Realme GT 2 Pro , Realme GT Neo 3
         </Typography>
 
-        <Typography style={{ fontSize: "12px" }}>Realme GT Neo 3</Typography>
+        <Typography style={stylesF1.someHeadingTypography}>Realme GT Neo 3</Typography>
       </Grid>
 
-      <Grid item xs={3} style={{ paddingTop: "5rem" }}>
+      <Grid item xs={3} style={stylesF1.twoGridItem}>
         <Typography
           variant="h2"
-          style={{ fontSize: "20px", marginBottom: "1rem" }}
+          style={stylesF1.headingTypography}
         >
           Top Categories & Brands
         </Typography>
 
-        <Link to="/new-mobile-phones" style={styles.link}>
-          <Typography variant="h4" style={{ fontSize: "12px" }}>
+        <Link to="/new-mobile-phones" style={stylesF1.link}>
+          <Typography variant="h4" style={stylesF1.someHeadingTypography}>
             NEW MOBILE PHONES IN NEPAL
           </Typography>
         </Link>
 
-        <Link to="/mobile-phones" style={styles.link}>
-          <Typography style={styles.everyTypography}>
+        <Link to="/mobile-phones" style={stylesF1.link}>
+          <Typography style={stylesF1.everyTypography}>
             Samsung Mobile Phones, Xiaomi Mobiles, Nokia Mobiles, Oppo Mobiles,
             Apple iPhones, OnePlus, Sony Mobiles, Huawei Mobiles, Lenovo
             Mobiles, Colors Mobiles, Gionee Mobiles, HTC Mobiles, Umidigi
@@ -133,77 +133,77 @@ const Footer1 = () => {
           </Typography>
         </Link>
 
-        <Link to="/latest-laptops" style={styles.link}>
-          <Typography variant="h4" style={{ fontSize: "12px" }}>
+        <Link to="/latest-laptops" style={stylesF1.link}>
+          <Typography variant="h4" style={stylesF1.someHeadingTypography}>
             LATEST LAPTOPS
           </Typography>
         </Link>
 
-        <Link to="/types-laptops" style={styles.link}>
-          <Typography style={styles.everyTypography}>
+        <Link to="/types-laptops" style={stylesF1.link}>
+          <Typography style={stylesF1.everyTypography}>
             Apple Laptops, Samsung Laptops, Asus Laptops, Acer Laptops, HP
             Laptops, Dell Laptops
           </Typography>
         </Link>
 
-        <Link to="/led-tv" style={styles.link}>
-          <Typography variant="h4" style={{ fontSize: "12px" }}>
+        <Link to="/led-tv" style={stylesF1.link}>
+          <Typography variant="h4" style={stylesF1.someHeadingTypography}>
             LED TVS PRICES
           </Typography>
         </Link>
 
-        <Link to="/types-led-tv" style={styles.link}>
-          <Typography style={styles.everyTypography}>
+        <Link to="/types-led-tv" style={stylesF1.link}>
+          <Typography style={stylesF1.everyTypography}>
             Samsung LED TVs, Sony LED TVs, Videocon LED TVs
           </Typography>
         </Link>
 
-        <Link to="/summer-appliances" style={styles.link}>
-          <Typography variant="h4" style={{ fontSize: "12px" }}>
+        <Link to="/summer-appliances" style={stylesF1.link}>
+          <Typography variant="h4" style={stylesF1.someHeadingTypography}>
             SUMMER APPLIANCES
           </Typography>
         </Link>
 
-        <Link to="/types-summer-appliances" style={styles.link}>
-          <Typography style={styles.everyTypography}>
+        <Link to="/types-summer-appliances" style={stylesF1.link}>
+          <Typography style={stylesF1.everyTypography}>
             Air Conditioners, Refrigerators & Fridges, Samsung Refrigerators,
             Deep Freezers, Generators & Portable Power, Water Dispensers
           </Typography>
         </Link>
 
-        <Link to="/camera" style={styles.link}>
-          <Typography variant="h4" style={{ fontSize: "12px" }}>
+        <Link to="/camera" style={stylesF1.link}>
+          <Typography variant="h4" style={stylesF1.someHeadingTypography}>
             CAMERAS
           </Typography>
         </Link>
 
-        <Link to="/camera-types" style={styles.link}>
-          <Typography style={styles.everyTypography}>
+        <Link to="/camera-types" style={stylesF1.link}>
+          <Typography style={stylesF1.everyTypography}>
             Grievance Management 015970597 (please ask to be redirected to our
             Grievance Management team)
           </Typography>
         </Link>
 
-        <Link to="/trdaing-products" style={styles.link}>
-          <Typography variant="h4" style={{ fontSize: "12px" }}>
+        <Link to="/trdaing-products" style={stylesF1.link}>
+          <Typography variant="h4" style={stylesF1.someHeadingTypography}>
             TRENDING Daraz
           </Typography>
         </Link>
 
-        <Link to="/trdaing-products-types" style={styles.link}>
-          <Typography style={styles.everyTypography}>
+        <Link to="/trdaing-products-types" style={stylesF1.link}>
+          <Typography style={stylesF1.everyTypography}>
             Camera Tripods, Drones, IP & CCTV Cameras
           </Typography>
         </Link>
 
-        <Link to="/latest-gadgets" style={styles.link}>
-          <Typography variant="h4" style={{ fontSize: "12px" }}>
+        <Link to="/latest-gadgets" style={stylesF1.link}>
+          <Typography variant="h4" style={stylesF1.someHeadingTypography}>
             LATEST GADGETS
           </Typography>
         </Link>
 
-        <Link to="/types-latest-gadgets" style={styles.link}>
-          <Typography style={styles.everyTypography}>
+        <Link to="/types-latest-gadgets" style={stylesF1.link}>
+          <Typography style={stylesF1.everyTypography}>
             Earphones & Headsets, Power Banks, Smart Watches, Portable Speakers,
             VR Headsets, PS4 Pro - PS4 Slim, Dell XPS 15, HP Envy 13, HP Spectre
             x360, Samsung A51, Galaxy Tab A7, Galaxy Tab S7, Samsung A72,
@@ -218,103 +218,103 @@ const Footer1 = () => {
         </Link>
       </Grid>
 
-      <Grid item xs={3} style={{ paddingTop: "5rem" }}>
-        <Link to="/computer components" style={styles.link}>
-          <Typography variant="h4" style={{ fontSize: "12px" }}>
+      <Grid item xs={3} style={stylesF1.twoGridItem}>
+        <Link to="/computer components" style={stylesF1.link}>
+          <Typography variant="h4" style={stylesF1.someHeadingTypography}>
             COMPUTER COMPONENTS
           </Typography>
         </Link>
 
-        <Link to="/types-computer components" style={styles.link}>
-          <Typography style={styles.everyTypography}>
+        <Link to="/types-computer components" style={stylesF1.link}>
+          <Typography style={stylesF1.everyTypography}>
             Ram, Motherboards, Processors, Desktop Casings, CPU Cooling Fans,
             Gaming Graphic Cards
           </Typography>
         </Link>
 
-        <Link to="/womens-fashion" style={styles.link}>
-          <Typography variant="h4" style={{ fontSize: "12px" }}>
+        <Link to="/womens-fashion" style={stylesF1.link}>
+          <Typography variant="h4" style={stylesF1.someHeadingTypography}>
             WOMEN'S FASHION
           </Typography>
         </Link>
 
-        <Link to="/types-women-fashion" style={styles.link}>
-          <Typography style={styles.everyTypography}>
+        <Link to="/types-women-fashion" style={stylesF1.link}>
+          <Typography style={stylesF1.everyTypography}>
             Clothes, Ladies Watches, Jewelry, Sarees, Ladies Kurti Designs,
             Women Undergarments, Shirts for Ladies & Girls, T-shirts for Ladies
             & Girls
           </Typography>
         </Link>
 
-        <Link to="/mens-fashion" style={styles.link}>
-          <Typography variant="h4" style={{ fontSize: "12px" }}>
+        <Link to="/mens-fashion" style={stylesF1.link}>
+          <Typography variant="h4" style={stylesF1.someHeadingTypography}>
             MEN'S FASHION
           </Typography>
         </Link>
 
-        <Link to="/types-mens-fashion" style={styles.link}>
-          <Typography style={styles.everyTypography}>
+        <Link to="/types-mens-fashion" style={stylesF1.link}>
+          <Typography style={stylesF1.everyTypography}>
             Men's jeans, Bags for Men, Men's Shoes, Men's T-Shirts, Men's
             Watches
           </Typography>
         </Link>
 
-        <Link to="/grocery-store" style={styles.link}>
-          <Typography variant="h4" style={{ fontSize: "12px" }}>
+        <Link to="/grocery-store" style={stylesF1.link}>
+          <Typography variant="h4" style={stylesF1.someHeadingTypography}>
             ONLINE GROCERY STORE
           </Typography>
         </Link>
 
-        <Link to="/item-grocery-store" style={styles.link}>
-          <Typography style={styles.everyTypography}>
+        <Link to="/item-grocery-store" style={stylesF1.link}>
+          <Typography style={stylesF1.everyTypography}>
             Rice, Chocolates, Tea, Coffee
           </Typography>
         </Link>
 
-        <Link to="/book-store" style={styles.link}>
-          <Typography variant="h4" style={{ fontSize: "12px" }}>
+        <Link to="/book-store" style={stylesF1.link}>
+          <Typography variant="h4" style={stylesF1.someHeadingTypography}>
             ONLINE BOOKSTORE
           </Typography>
         </Link>
 
-        <Link to="/items-books-store" style={styles.link}>
-          <Typography style={styles.everyTypography}>
+        <Link to="/items-books-store" style={stylesF1.link}>
+          <Typography style={stylesF1.everyTypography}>
             Stationary Store, Religious Items
           </Typography>
         </Link>
 
-        <Link to="/automotive-store" style={styles.link}>
-          <Typography variant="h4" style={{ fontSize: "12px" }}>
+        <Link to="/automotive-store" style={stylesF1.link}>
+          <Typography variant="h4" style={stylesF1.someHeadingTypography}>
             ONLINE AUTOMOTIVE STORE
           </Typography>
         </Link>
 
-        <Link to="/items-automotive-store" style={styles.link}>
-          <Typography style={styles.everyTypography}>
+        <Link to="/items-automotive-store" style={stylesF1.link}>
+          <Typography style={stylesF1.everyTypography}>
             Motorcycles - Bikes, Helmets
           </Typography>
         </Link>
 
-        <Link to="/leading-store" style={styles.link}>
-          <Typography variant="h4" style={{ fontSize: "12px" }}>
+        <Link to="/leading-store" style={stylesF1.link}>
+          <Typography variant="h4" style={stylesF1.someHeadingTypography}>
             LEADING ONLINE STORES
           </Typography>
         </Link>
 
-        <Link to="/types-leading-store" style={styles.link}>
-          <Typography style={styles.everyTypography}>
+        <Link to="/types-leading-store" style={stylesF1.link}>
+          <Typography style={stylesF1.everyTypography}>
             Goldstar Shoes, Dell, Samsung, Canon, Oppo, Sony, Nokia, Apple
           </Typography>
         </Link>
 
-        <Link to="/trending-products" style={styles.link}>
-          <Typography variant="h4" style={{ fontSize: "12px" }}>
+        <Link to="/trending-products" style={stylesF1.link}>
+          <Typography variant="h4" style={stylesF1.someHeadingTypography}>
             TRENDING PRODUCTS
           </Typography>
         </Link>
 
-        <Link to="/items-tranding-products" style={styles.link}>
-          <Typography style={styles.everyTypography}>
+        <Link to="/items-tranding-products" style={stylesF1.link}>
+          <Typography style={stylesF1.everyTypography}>
             Vivo Y20, Oppo A12, Samsung Galaxy M31, iPhone 12, Redmi 9A, Poco
             F3, Samsung M12, Oppo F19 Pro, Samsung A32, Infinix Hot 10, Samsung
             A12, OnePlus Nord 2, Samsung M62, Samsung M32, TVS Ntorq, Poco X3
