@@ -7,6 +7,7 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent"
 
 import  Categories  from "../../component/category/Categories";
+import ProductCategories from "../../component/category/ProductCategories";
 
 const HomePage = () => {
   const { products } = useSelector((state) => state.products);
@@ -16,6 +17,7 @@ const HomePage = () => {
   return (
     <>
     <Categories/>
+    <ProductCategories/>
       <Card
         style={{
           marginTop: "7rem",

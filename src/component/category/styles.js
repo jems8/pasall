@@ -65,3 +65,71 @@ export const styles = {
     padding: "0rem 1rem 1rem 1rem",
   },
 };
+
+export const style = {
+  navigationMainBox: {
+    display: "flex",
+    marginLeft: "17rem",
+    width: "80rem",
+    marginTop: "2rem",
+  },
+
+  navigationProductBox: {
+    margin: "2rem",
+    width: "4rem",
+    alignItems: "center",
+  },
+
+  navigationLink: {
+    textDecoration: "none",
+  },
+
+  navigationImage: {
+    height: "6rem",
+  },
+
+  navigationTypography: {
+    textAlign: "center",
+    marginTop: "1rem",
+  },
+};
+
+export const productCategories = {
+  productBoxTypology: {
+    textAlign: "center",
+    paddingTop: "5px",
+  },
+
+  productBoxImage: {
+    width: "70%",
+    padding: "20px",
+  },
+
+  productBoxCard: {
+    height: "13rem",
+    width: "10rem",
+  },
+
+  gridContainer: {
+    paddingTop: "5rem",
+    paddingLeft: "18rem",
+  },
+
+  gridItemTypology: {
+    fontSize: "30px",
+  },
+
+  gridContainerBox1: {
+    display: "flex",
+    paddingTop: "2rem",
+    borderRadius: "5px",
+  },
+
+  gridContainerBox2: {
+    display: "flex",
+    borderRadius: "5px",
+  },
+  productBoxLink:{
+    textDecoration: 'none',
+  }
+};
