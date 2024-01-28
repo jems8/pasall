@@ -8,8 +8,8 @@ import CardContent from "@mui/material/CardContent"
 
 import  Categories  from "../../component/category/Categories";
 import CustomFooter from "../../component/footer/index";
-import { styles } from "./style";
 
+import { styles } from "./style";
 
 const HomePage = () => {  
   const { products } = useSelector((state) => state.products);

@@ -8,14 +8,14 @@ import YouTubeIcon from "@mui/icons-material/YouTube";
 
 import { stylesF2 } from "./styles";
 
-const Footer2 = () => {
-  const paymentOptions =[
-    { name: "eSewa", imageSrc: "/esewaimg.png" },
-    { name: "Visa", imageSrc: "/visaimg.png" },
-    { name: "IME Pay", imageSrc: "/imepayimg.png" },
-    { name: "Mastercard", imageSrc: "/mastercardimg.png" },
-  ];
+const paymentOptions =[
+  { name: "eSewa", imageSrc: "/esewaimg.png" },
+  { name: "Visa", imageSrc: "/visaimg.png" },
+  { name: "IME Pay", imageSrc: "/imepayimg.png" },
+  { name: "Mastercard", imageSrc: "/mastercardimg.png" },
+];
 
+const Footer2 = () => {
   return (
     <Grid container spacing={2}>
       <Grid item xs={3} style={stylesF2.footerGridItem}>
