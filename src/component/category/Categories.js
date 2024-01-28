@@ -4,8 +4,14 @@ import { useNavigate } from "react-router-dom";
 import Card from "@mui/material/Card";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import Grid from "@mui/material/Grid";
+
+import Card from "@mui/material/Card";
+import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+import Grid from "@mui/material/Grid";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
+import Typography from "@mui/material/Typography";
+
 import Typography from "@mui/material/Typography";
 
 import { MenuList } from "../../constants/MenuConstant";
@@ -97,9 +103,7 @@ export default function CategoryDrawer() {
           container
         >
           {!!selectedCategory && (
-            <Card
-              style={styles.subCategoryCard}
-            >
+            <Card style={styles.subCategoryCard}>
               <List>
                 {Object.keys(selectedCategory.subcategories).map(
                   (subcategoryKey, index) => (
@@ -145,9 +149,7 @@ export default function CategoryDrawer() {
             </Card>
           )}
           {!!isSubCategoryHovered && (
-            <Card
-              style={styles.productsCard}
-            >
+            <Card style={styles.productsCard}>
               {selectedCategory?.subcategories?.[selectedSubCategory].map(
                 (product, pIndex) => (
                   <ProductImageCard {...product} key={pIndex} />
@@ -166,15 +168,8 @@ const ProductImageCard = (props) => {
 
   return (
     <div>
-      <img
-        src={image}
-        style={styles.imageControl}
-      />
-      <Typography
-        style={styles.imageTypography}
-      >
-        {label}
-      </Typography>
+      <img src={image} style={styles.imageControl} />
+      <Typography style={styles.imageTypography}>{label}</Typography>
     </div>
   );
 };
