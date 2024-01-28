@@ -16,6 +16,7 @@ const HomePage = () => {
 
   return (
     <>
+    <Carousel/>
     <Categories/>
     <ProductCategories/>
       <Card
