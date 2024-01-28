@@ -8,5 +8,5 @@ return(
     <Footer1/>
     </>
 )}
-    
+     
 export default CustomFooter
