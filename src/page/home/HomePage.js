@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 
 import { Card, CardContent, Typography } from "@mui/material";
 import  Categories  from "../../component/category/Categories";
+import Carousel from "../../component/Carousal";
 
 const HomePage = () => {
   const { products } = useSelector((state) => state.products);
@@ -14,6 +15,7 @@ const HomePage = () => {
 
   return (
     <>
+    <Carousel/>
     <Categories/>
       <card
         style={{

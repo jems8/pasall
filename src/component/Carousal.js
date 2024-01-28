@@ -25,13 +25,13 @@ const Carousel = () => {
         <img src="hmcarousal3.jpg" alt="Image 3" />
       </div>
       <div>
-        <img src="hmcarousal4.jpg" alt="Image 3" />
+        <img src="hmcarousal4.jpg" alt="Image 4" />
       </div>
       <div>
-        <img src="hmcarousal4.jpg" alt="Image 3" />
+        <img src="hmcarousal4.jpg" alt="Image 5" />
       </div>
       <div>
-        <img src="hmcarousal6.jpg" alt="Image 3" />
+        <img src="hmcarousal6.jpg" alt="Image 6" />
       </div>
     </Slider>
   );
