@@ -1,35 +1,28 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
+import Card from "@mui/material/Card";
+import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+import Grid from "@mui/material/Grid";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
-import { Card, Typography } from "@mui/material";
-import Grid from "@mui/material/Grid";
+import Typography from "@mui/material/Typography";
+
 import { MenuList } from "../../constants/MenuConstant";
-
-// const products = {
-//   Clothing: ["Makeup Kit", "Skincare Products", "Fragrances"],
-//   'Lifestyle': ['Home Fitness Equipment', 'Outdoor Gear', 'Books'],
-
-// }
-
-//   // Lifestyle: ['Home Fitness Equipment', 'Outdoor Gear', 'Books'],
-//   // 'Proudly Nepali': ['Handicrafts', 'Local Art', 'Traditional Clothing'],
-//   // Fashion: ['Clothing', 'Shoes', 'Accessories'],
-//   // 'New on Daraz': ['Latest Gadgets', 'Innovative Products', 'Tech Accessories'],
-//   // 'Free Delivery': ['Selected Items with Free Delivery'],
-//   // 'Everyday Low Price': ['Budget-Friendly Products', 'Discounted Items'],
-//   // 'Electronic Bazaar': ['Mobile Phones', 'Laptops', 'Camera Accessories'],
-//   // 'Global Collection': ['International Electronics', 'Fashion Brands', 'Imported Goods'],
+import { styles } from "./styles";
 
 export default function CategoryDrawer() {
+  const navigate = useNavigate();
+
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [isCategoryHovered, setIsCategoryHovered] = useState(false);
   const [selectedSubCategory, setSelectedSubCategory] = useState(null);
   const [isSubCategoryHovered, setIsSubCategoryHovered] = useState(false);
+  const [isProductCardHovered, setIsProductCardHovered] = useState(false);
 
   const handleCategoryMouseEnter = (category) => {
     setSelectedCategory(category);
     setIsCategoryHovered(true);
-    setSelectedSubCategory(null);
   };
 
   const handleCategoryMouseLeave = () => {
@@ -38,9 +31,9 @@ export default function CategoryDrawer() {
   };
 
   const handleSubCategoryHover = (subcategory) => {
-    console.log("thisisisis",subcategory)
     setSelectedSubCategory(subcategory);
     setIsSubCategoryHovered(true);
+    setIsProductCardHovered(false);
   };
 
   const handleSubCategoryMouseLeave = () => {
@@ -48,142 +41,129 @@ export default function CategoryDrawer() {
     setIsSubCategoryHovered(false);
   };
 
-  const handleItemHover = () => {
-    setIsSubCategoryHovered(true);
+  const handleSubCategoryClick = (subcategory) => {
+    navigate(`/ListProductsPage/${subcategory}`);
   };
 
-  console.log("selected categories",selectedCategory?.subcategories,selectedSubCategory)
+  const handleProductClick = (product) => {
+    navigate(`/ListProductsPage/${product}`);
+  };
+
   return (
-    <Grid container spacing={2}>
+    <Grid container spacing={12}>
       <Grid item xs={3}>
-        <Card
-          style={{
-            height: "20rem",
-            width: "15rem",
-            borderRadius: "1rem",
-            marginTop: "1rem",
-            paddingBottom: "5rem",
-            marginLeft: "20rem",
-            cursor: "pointer",
-          }}
-        >
+        <Card sx={styles.categoryCard}>
           <List>
             {MenuList.map((category, index) => (
               <ListItem
                 key={index}
                 onMouseEnter={() => handleCategoryMouseEnter(category)}
                 style={{
+                  ...styles.listItemCategory,
                   background:
                     selectedCategory === category &&
                     (isCategoryHovered ? "#e0e0e0" : "white"),
                 }}
-                // onMouseLeave={() => handleCategoryMouseLeave()}
               >
                 <Typography
                   variant="body2"
                   sx={{
-                    fontSize: "12px",
-                    width: "100rem",
+                    ...styles.typographyCategory,
                     color: selectedCategory === category ? "red" : "inherit",
                   }}
                 >
                   {category.name}
                 </Typography>
+                {selectedCategory === category && (
+                  <ChevronRightIcon
+                    style={{
+                      color: selectedCategory === category ? "red" : "inherit",
+                    }}
+                  />
+                )}
               </ListItem>
             ))}
           </List>
         </Card>
       </Grid>
-      <Grid
-        onMouseLeave={() => {
-          handleCategoryMouseLeave();
-          handleSubCategoryMouseLeave();
-        }}
-        item
-        xs={6}
-        style={{ display: "flex" }}
-      >
-        {selectedCategory && isCategoryHovered && (
-          <Card
-            style={{
-              height: "24rem",
-              width: "15rem",
-              borderRadius: "1rem",
-              marginTop: "1rem",
-              paddingBottom: "1rem",
-              marginLeft: "6rem",
-              cursor: 'pointer',
-            }}
-          >
-            <List>  
-              {selectedCategory.subcategories.map((item, index) => (
-                <ListItem
-                  key={index}
-                  onMouseEnter={() => handleSubCategoryHover(item)}
-                  onMouseLeave={handleSubCategoryMouseLeave}
-                  style={{
-                    background:
-                      selectedSubCategory === item &&
-                      (isSubCategoryHovered ? "#e0e0e0" : "white"),
-                  }}
-                >
-                  <Typography
-                    variant="body2"
-                    sx={{
-                      fontSize: "12px",
-                      width: '100%',
-                      color: selectedSubCategory === item ? "red" : "inherit",
-                    }}
-                  >
-                    {typeof item === "object" ? Object.keys(item)[0] : item}
-                  </Typography>
-                </ListItem>
-              ))}
-            </List>
-          </Card>
-        )}
-        {selectedCategory && isCategoryHovered && selectedSubCategory && (
-          <Card
-            style={{
-              height: "24rem",
-              width: "30rem",
-              borderRadius: "1rem",
-              marginTop: "1rem",
-              paddingBottom: "1rem",
-              marginLeft: "0rem",
-              cursor: "pointer"
-            }}
-          >
-            <List>
-
-              {/* {selectedCategory.subcategories
-                .filter(
-                  (item) =>
-                    typeof item === "object" &&
-                    Object.keys(item)[0] === selectedSubCategory
-                )
-                .map((subcategory, index) => (
-                  <ListItem key={index}>
-                    {subcategory[selectedSubCategory].map((product, pIndex) => (
+      {!!isCategoryHovered && (
+        <Grid
+          onMouseLeave={() => {
+            handleCategoryMouseLeave();
+            handleSubCategoryMouseLeave();
+          }}
+          item
+          xs={9}
+          container
+        >
+          {!!selectedCategory && (
+            <Card style={styles.subCategoryCard}>
+              <List>
+                {Object.keys(selectedCategory.subcategories).map(
+                  (subcategoryKey, index) => (
+                    <ListItem
+                      onClick={() => handleSubCategoryClick(subcategoryKey)}
+                      key={index}
+                      onMouseEnter={() =>
+                        handleSubCategoryHover(subcategoryKey)
+                      }
+                      style={{
+                        ...styles.listItemSubcategory,
+                        background:
+                          selectedSubCategory === subcategoryKey &&
+                          (isSubCategoryHovered ? "#e0e0e0" : "white"),
+                      }}
+                    >
                       <Typography
-                        key={pIndex}
                         variant="body2"
                         sx={{
-                          fontSize: "12px",
-                          width: "100%",
-                          color: selectedCategory === subcategory ? "red" : "inherit",
+                          ...styles.typographySubcategory,
+                          color:
+                            selectedSubCategory === subcategoryKey
+                              ? "red"
+                              : "inherit",
                         }}
                       >
-                        {product}
+                        {subcategoryKey}
                       </Typography>
-                    ))}
-                  </ListItem>
-                ))} */}
-          
-            </List>
-          </Card>
-        )}
-      </Grid>
+                      {selectedSubCategory === subcategoryKey && (
+                        <ChevronRightIcon
+                          style={{
+                            color:
+                              selectedSubCategory === subcategoryKey
+                                ? "red"
+                                : "inherit",
+                          }}
+                        />
+                      )}
+                    </ListItem>
+                  )
+                )}
+              </List>
+            </Card>
+          )}
+          {!!isSubCategoryHovered && (
+            <Card style={styles.productsCard}>
+              {selectedCategory?.subcategories?.[selectedSubCategory].map(
+                (product, pIndex) => (
+                  <ProductImageCard {...product} key={pIndex} />
+                )
+              )}
+            </Card>
+          )}
+        </Grid>
+      )}
     </Grid>
   );
 }
+
+const ProductImageCard = (props) => {
+  const { image, label } = props;
+
+  return (
+    <div>
+      <img src={image} style={styles.imageControl} />
+      <Typography style={styles.imageTypography}>{label}</Typography>
+    </div>
+  );
+};
