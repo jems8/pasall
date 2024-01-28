@@ -11,6 +11,8 @@ import Typography from "@mui/material/Typography";
 import { MenuList } from "../../constants/MenuConstant";
 import { styles } from "./styles";
 
+import Carousal from "../Carousal";
+
 export default function CategoryDrawer() {
   const navigate = useNavigate();
 
@@ -153,6 +155,7 @@ export default function CategoryDrawer() {
           )}
         </Grid>
       )}
+      <Carousal/>
     </Grid>
   );
 }
