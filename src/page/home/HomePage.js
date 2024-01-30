@@ -1,19 +1,16 @@
 import React from "react";
 
-import { useSelector } from "react-redux";
-
 import Box from "@mui/material/Box";
 
 import Categories from "../../component/category/Categories";
-import CustomFooter from "../../component/footer/index";
 
-import { styles } from "./style";
 import ProductCategories from "../../component/category/ProductCategories";
 import Carousel from "../../component/carousal/Carousal";
-import { styles } from "./style";
+import { styles } from "./styles";
+import Footer1 from "../../component/footer/Footer1";
+import Footer2 from "../../component/footer/Footer2";
 
 const HomePage = () => {  
-  const { products } = useSelector((state) => state.products);
 
   return (
     <>
@@ -24,6 +21,8 @@ const HomePage = () => {
         </Box>
       </Box>
       <ProductCategories />
+      <Footer2/>
+      <Footer1/>
     </>
   );
 };

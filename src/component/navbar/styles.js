@@ -5,7 +5,7 @@ export const styles = {
     color: "white",
   },
   navbarLoginButton: {
-    marginLeft: "40rem",
+    marginLeft: "38rem",
     backgroundColor: "#f85606",
     color: "white",
   },
@@ -43,9 +43,9 @@ export const styles = {
     alignItems: "center",
     justifyContent: "center",
   },
-  search:{
-    position:'relative',
+  search: {
+    position: "relative",
     marginLeft: 0,
     width: "100%",
-  }
+  },
 };

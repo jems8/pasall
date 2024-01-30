@@ -152,7 +152,6 @@ export default function CategoryDrawer() {
           )}
         </Grid>
       )}
-      {/* <Carousal/> */}
     </Grid>
   );
 }
@@ -174,8 +173,9 @@ const ProductImageCard = (props) => {
       onMouseEnter={handleProductHover}
       onMouseLeave={handleProductHover}
       key={label}
+      style={styles.productImageCardDiv}
     >
-      <img src={image} style={styles.imageControl} />
+      <img src={`${image}`} style={styles.imageControl} />
       <Typography
         style={{
           ...styles.imageTypography,
