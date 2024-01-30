@@ -18,7 +18,6 @@ export default function CategoryDrawer() {
   const [isCategoryHovered, setIsCategoryHovered] = useState(false);
   const [selectedSubCategory, setSelectedSubCategory] = useState(null);
   const [isSubCategoryHovered, setIsSubCategoryHovered] = useState(false);
-  const [isProductCardHovered, setIsProductCardHovered] = useState(false);
 
   const handleCategoryMouseEnter = (category) => {
     setSelectedCategory(category);
@@ -33,7 +32,6 @@ export default function CategoryDrawer() {
   const handleSubCategoryHover = (subcategory) => {
     setSelectedSubCategory(subcategory);
     setIsSubCategoryHovered(true);
-    setIsProductCardHovered(false);
   };
 
   const handleSubCategoryMouseLeave = () => {
@@ -50,8 +48,8 @@ export default function CategoryDrawer() {
   };
 
   return (
-    <Grid container spacing={12}>
-      <Grid item xs={3}>
+    <Grid container spacing={2}>
+      <Grid item xs={3} style={styles.categoryGrid}>
         <Card sx={styles.categoryCard}>
           <List>
             {MenuList.map((category, index) => (
@@ -95,11 +93,10 @@ export default function CategoryDrawer() {
           item
           xs={9}
           container
+          sx={styles.subCategoryGrid}
         >
           {!!selectedCategory && (
-            <Card
-              style={styles.subCategoryCard}
-            >
+            <Card style={styles.subCategoryCard}>
               <List>
                 {Object.keys(selectedCategory.subcategories).map(
                   (subcategoryKey, index) => (
@@ -145,9 +142,7 @@ export default function CategoryDrawer() {
             </Card>
           )}
           {!!isSubCategoryHovered && (
-            <Card
-              style={styles.productsCard}
-            >
+            <Card style={styles.productsCard}>
               {selectedCategory?.subcategories?.[selectedSubCategory].map(
                 (product, pIndex) => (
                   <ProductImageCard {...product} key={pIndex} />
@@ -157,21 +152,35 @@ export default function CategoryDrawer() {
           )}
         </Grid>
       )}
+      {/* <Carousal/> */}
     </Grid>
   );
 }
 
 const ProductImageCard = (props) => {
-  const { image, label } = props;
+  const {
+    image,
+    label,
+  } = props;
 
+  const [isProductHovered,setIsProductHovered] = useState(false);
+
+  const handleProductHover=()=>{
+    setIsProductHovered(prev=>!prev)
+  }
+  
   return (
-    <div>
-      <img
-        src={image}
-        style={styles.imageControl}
-      />
+    <div
+      onMouseEnter={handleProductHover}
+      onMouseLeave={handleProductHover}
+      key={label}
+    >
+      <img src={image} style={styles.imageControl} />
       <Typography
-        style={styles.imageTypography}
+        style={{
+          ...styles.imageTypography,
+          color: isProductHovered ? "red" : "inherit",
+        }}
       >
         {label}
       </Typography>
