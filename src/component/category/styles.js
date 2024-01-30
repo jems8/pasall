@@ -8,7 +8,7 @@ export const styles = {
     left: "34rem",
   },
   categoryCard: {
-    height: "20rem",
+    height: "24rem",
     width: "15rem",
     borderRadius: "1rem",
     marginTop: "1rem",
@@ -46,8 +46,9 @@ export const styles = {
   },
 
   productsCard: {
-    height: "23rem",
-    width: "51rem",
+    height: "24rem",
+    width: "35rem",
+    borderRadius: "1rem",
     marginTop: "1rem",
     padding: "1rem",
     cursor: "pointer",
@@ -71,6 +72,78 @@ export const styles = {
     fontSize: "12px",
     textAlign: "center",
     padding: "0rem 1rem 1rem 1rem",
+  },
+
+  styleeverytypography:{
+    marginButton: '1rem',
+    fontSize: '12px'
+  }
+};
+
+export const style1 = {
+  navigationMainBox: {
+    display: "flex",
+    marginLeft: "17rem",
+    width: "80rem",
+    marginTop: "2rem",
+  },
+
+  navigationProductBox: {
+    margin: "2rem",
+    width: "4rem",
+    alignItems: "center",
+  },
+
+  navigationLink: {
+    textDecoration: "none",
+  },
+
+  navigationImage: {
+    height: "6rem",
+  },
+
+  navigationTypography: {
+    textAlign: "center",
+    marginTop: "1rem",
+  },
+};
+
+export const productCategories = {
+  productBoxTypology: {
+    textAlign: "center",
+    paddingTop: "5px",
+  },
+
+  productBoxImage: {
+    width: "70%",
+    padding: "20px",
+  },
+
+  productBoxCard: {
+    height: "13rem",
+    width: "10rem",
+  },
+
+  gridContainer: {
+    paddingTop: "5rem",
+  },
+
+  gridItemTypology: {
+    fontSize: "30px",
+  },
+
+  gridContainerBox1: {
+    display: "flex",
+    paddingTop: "2rem",
+    borderRadius: "5px",
+  },
+
+  gridContainerBox2: {
+    display: "flex",
+    borderRadius: "5px",
+  },
+  productBoxLink: {
+    textDecoration: "none",
   },
 };
 

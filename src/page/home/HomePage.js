@@ -5,11 +5,14 @@ import { useSelector } from "react-redux";
 import Box from "@mui/material/Box";
 
 import Categories from "../../component/category/Categories";
+import CustomFooter from "../../component/footer/index";
+
+import { styles } from "./style";
 import ProductCategories from "../../component/category/ProductCategories";
 import Carousel from "../../component/carousal/Carousal";
 import { styles } from "./style";
 
-const HomePage = () => {
+const HomePage = () => {  
   const { products } = useSelector((state) => state.products);
 
   return (
