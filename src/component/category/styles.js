@@ -5,8 +5,9 @@ export const styles = {
     borderRadius: "1rem",
     marginTop: "1rem",
     paddingBottom: "5rem",
-    marginLeft: "25rem",
     cursor: "pointer",
+    zIndex:1,
+    left: 10
   },
 
   listItemCategory: {
@@ -20,11 +21,9 @@ export const styles = {
 
   subCategoryCard: {
     height: "24rem",
-    width: "15rem",
-    borderRadius: "1rem",
+    width: "13rem",
     marginTop: "1rem",
     paddingBottom: "1rem",
-    marginLeft: "10rem",
     cursor: "pointer",
   },
 
@@ -40,16 +39,17 @@ export const styles = {
 
   productsCard: {
     height: "23rem",
-    width: "35rem",
-    borderRadius: "1rem",
+    width: "51rem",
     marginTop: "1rem",
     padding: "1rem",
-    marginLeft: "0rem",
     cursor: "pointer",
     display: "flex",
     flexWrap: "wrap",
     overflow: "auto",
     objectFit: "contain",
+    zIndex:1,
+    position:'absolute',
+    left:'14rem'
   },
 
   imageControl: {
@@ -112,7 +112,6 @@ export const productCategories = {
 
   gridContainer: {
     paddingTop: "5rem",
-    paddingLeft: "18rem",
   },
 
   gridItemTypology: {

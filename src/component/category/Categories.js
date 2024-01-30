@@ -4,14 +4,8 @@ import { useNavigate } from "react-router-dom";
 import Card from "@mui/material/Card";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import Grid from "@mui/material/Grid";
-
-import Card from "@mui/material/Card";
-import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-import Grid from "@mui/material/Grid";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
-import Typography from "@mui/material/Typography";
-
 import Typography from "@mui/material/Typography";
 
 import { MenuList } from "../../constants/MenuConstant";
@@ -24,7 +18,6 @@ export default function CategoryDrawer() {
   const [isCategoryHovered, setIsCategoryHovered] = useState(false);
   const [selectedSubCategory, setSelectedSubCategory] = useState(null);
   const [isSubCategoryHovered, setIsSubCategoryHovered] = useState(false);
-  const [isProductCardHovered, setIsProductCardHovered] = useState(false);
 
   const handleCategoryMouseEnter = (category) => {
     setSelectedCategory(category);
@@ -39,7 +32,6 @@ export default function CategoryDrawer() {
   const handleSubCategoryHover = (subcategory) => {
     setSelectedSubCategory(subcategory);
     setIsSubCategoryHovered(true);
-    setIsProductCardHovered(false);
   };
 
   const handleSubCategoryMouseLeave = () => {
@@ -56,8 +48,8 @@ export default function CategoryDrawer() {
   };
 
   return (
-    <Grid container spacing={12}>
-      <Grid item xs={3}>
+    <Grid container spacing={2}>
+      <Grid item xs={3} position="relative">
         <Card sx={styles.categoryCard}>
           <List>
             {MenuList.map((category, index) => (
@@ -101,6 +93,7 @@ export default function CategoryDrawer() {
           item
           xs={9}
           container
+          sx={{ position: "absolute", zIndex: 1, left: "34rem" }}
         >
           {!!selectedCategory && (
             <Card style={styles.subCategoryCard}>
@@ -132,16 +125,6 @@ export default function CategoryDrawer() {
                       >
                         {subcategoryKey}
                       </Typography>
-                      {selectedSubCategory === subcategoryKey && (
-                        <ChevronRightIcon
-                          style={{
-                            color:
-                              selectedSubCategory === subcategoryKey
-                                ? "red"
-                                : "inherit",
-                          }}
-                        />
-                      )}
                     </ListItem>
                   )
                 )}
@@ -152,25 +135,47 @@ export default function CategoryDrawer() {
             <Card style={styles.productsCard}>
               {selectedCategory?.subcategories?.[selectedSubCategory].map(
                 (product, pIndex) => (
-                  <ProductImageCard {...product} key={pIndex} />
+                  <ProductImageCard
+                    {...product}
+                    key={pIndex}
+                  />
                 )
               )}
             </Card>
           )}
         </Grid>
       )}
-      {/* <Carousal/> */}
     </Grid>
   );
 }
 
 const ProductImageCard = (props) => {
-  const { image, label } = props;
+  const {
+    image,
+    label,
+  } = props;
 
+  const [isProductHovered,setIsProductHovered] = useState(false);
+
+  const handleProductHover=()=>{
+    setIsProductHovered(prev=>!prev)
+  }
+  
   return (
-    <div>
+    <div
+      onMouseEnter={handleProductHover}
+      onMouseLeave={handleProductHover}
+      key={label}
+    >
       <img src={image} style={styles.imageControl} />
-      <Typography style={styles.imageTypography}>{label}</Typography>
+      <Typography
+        style={{
+          ...styles.imageTypography,
+          color: isProductHovered ? "red" : "inherit",
+        }}
+      >
+        {label}
+      </Typography>
     </div>
   );
 };
