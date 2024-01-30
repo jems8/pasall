@@ -1,4 +1,12 @@
 export const styles = {
+  categoryGrid: {
+    position: "relative",
+  },
+  subCategoryGrid: {
+    position: "absolute",
+    zIndex: 1,
+    left: "34rem",
+  },
   categoryCard: {
     height: "20rem",
     width: "15rem",
@@ -6,8 +14,8 @@ export const styles = {
     marginTop: "1rem",
     paddingBottom: "5rem",
     cursor: "pointer",
-    zIndex:1,
-    left: 10
+    zIndex: 1,
+    left: 10,
   },
 
   listItemCategory: {
@@ -47,9 +55,9 @@ export const styles = {
     flexWrap: "wrap",
     overflow: "auto",
     objectFit: "contain",
-    zIndex:1,
-    position:'absolute',
-    left:'14rem'
+    zIndex: 1,
+    position: "absolute",
+    left: "14rem",
   },
 
   imageControl: {
@@ -128,7 +136,7 @@ export const productCategories = {
     display: "flex",
     borderRadius: "5px",
   },
-  productBoxLink:{
-    textDecoration: 'none',
-  }
+  productBoxLink: {
+    textDecoration: "none",
+  },
 };

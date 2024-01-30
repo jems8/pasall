@@ -11,17 +11,16 @@ import FormControl from "@mui/material/FormControl";
 import InputLabel from "@mui/material/InputLabel";
 import Select from "@mui/material/Select";
 import { Button, Link } from "@mui/material";
+import { styles } from "./styles";
 
 const Search = styled("div")(({ theme }) => ({
-  position: "relative",
+...styles.search,
   borderRadius: theme.shape.borderRadius,
   backgroundColor: alpha(theme.palette.common.white, 0.15),
   "&:hover": {
     backgroundColor: alpha(theme.palette.common.white, 0.25),
   },
   marginRight: theme.spacing(2),
-  marginLeft: 0,
-  width: "100%",
   [theme.breakpoints.up("sm")]: {
     marginLeft: theme.spacing(5),
     width: "auto",
@@ -29,13 +28,9 @@ const Search = styled("div")(({ theme }) => ({
 }));
 
 const SearchIconWrapper = styled("div")(({ theme }) => ({
+  ...styles.searchIconWrapper,
   padding: theme.spacing(0, 3),
-  height: "1%",
-  position: "absolute",
-  pointerEvents: "none",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
+  
 }));
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
@@ -54,8 +49,8 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 export default function PrimarySearchAppBar() {
 
   return (
-      <AppBar position="static" sx={{ flexGrow: 1 ,backgroundColor: "#f85606" }}>
-        <Toolbar sx={{maxWidth:'1280px', marginX:'auto'}}>
+      <AppBar sx={styles.appBar}>
+        <Toolbar sx={styles.toolBar}>
           <Typography
             variant="h6"
             component="div"
@@ -64,37 +59,37 @@ export default function PrimarySearchAppBar() {
             <img
               src="daraz.png"
               alt="Daraz Logo"
-              style={{width: '120px',height: '48px' }}
+              style={styles.darazImage}
             />
           </Typography>
           <Search >
             <StyledInputBase
-            style={{backgroundColor:'white',width: '300%',borderRadius: '15px'}}
+            style={styles.searchInputBased}
               placeholder ="Search… in daraz"
               inputProps={{ "aria-label": "search" }}
             />
-            <SearchIconWrapper style={{ width: '560%', color: 'black', marginTop: '-1rem' }} >
+            <SearchIconWrapper style={styles.searchIcon} >
               <SearchIcon />
             </SearchIconWrapper>
           </Search>
 
           <Button
-            style={{ marginLeft: "40rem", backgroundColor: "#f85606" ,color: 'white'}}
+            style={styles.navbarLoginButton}
             component={Link}
             href="/LoginForm"
           >
             Login
           </Button>
           <Button
-            style={{ marginLeft: "1rem", backgroundColor: "#f85606",color: 'white' }}
+            style={styles.navbarSignupButton}
             component={Link}
             href="/SignUp"
           >
             SignUp
           </Button>
 
-          <FormControl style={{marginLeft: '1rem'}}>
-            <InputLabel id="demo-simple-select-label" style={{color: 'white'}}>EN</InputLabel>
+          <FormControl >
+            <InputLabel id="demo-simple-select-label" style={styles.formControlInput}>EN</InputLabel>
             <Select
               labelId="demo-simple-select-label"
               id="demo-simple-select"

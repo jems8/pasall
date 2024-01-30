@@ -4,7 +4,7 @@ import HomePage from "./page/home/HomePage";
 import ListProductsPage from "./page/product/ListProductPage";
 import EditProductPage from "./page/product/EditProductPage";
 import ShowProductPage from "./page/product/ShowProductPage";
-import NavBar from "./component/NavBar";
+import NavBar from "./component/navbar/NavBar";
 import CreateProductPage from "./page/product/CreateProductPage";
 import LoginForm from "./component/form/LoginForm";
 import SignupForm from "./component/form/SignupForm";

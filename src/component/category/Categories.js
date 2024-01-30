@@ -18,7 +18,6 @@ export default function CategoryDrawer() {
   const [isCategoryHovered, setIsCategoryHovered] = useState(false);
   const [selectedSubCategory, setSelectedSubCategory] = useState(null);
   const [isSubCategoryHovered, setIsSubCategoryHovered] = useState(false);
-  const [isProductCardHovered, setIsProductCardHovered] = useState(false);
 
   const handleCategoryMouseEnter = (category) => {
     setSelectedCategory(category);
@@ -33,7 +32,6 @@ export default function CategoryDrawer() {
   const handleSubCategoryHover = (subcategory) => {
     setSelectedSubCategory(subcategory);
     setIsSubCategoryHovered(true);
-    setIsProductCardHovered(false);
   };
 
   const handleSubCategoryMouseLeave = () => {
@@ -51,7 +49,7 @@ export default function CategoryDrawer() {
 
   return (
     <Grid container spacing={2}>
-      <Grid item xs={3} position="relative">
+      <Grid item xs={3} style={styles.categoryGrid}>
         <Card sx={styles.categoryCard}>
           <List>
             {MenuList.map((category, index) => (
@@ -95,7 +93,7 @@ export default function CategoryDrawer() {
           item
           xs={9}
           container
-          sx={{ position: "absolute", zIndex: 1, left: "34rem" }}
+          sx={styles.subCategoryGrid}
         >
           {!!selectedCategory && (
             <Card style={styles.subCategoryCard}>
@@ -125,7 +123,6 @@ export default function CategoryDrawer() {
                               : "inherit",
                         }}
                       >
-                        {subcategoryKey}
                         {subcategoryKey}
                       </Typography>
                       {selectedSubCategory === subcategoryKey && (
