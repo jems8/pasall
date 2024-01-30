@@ -18,6 +18,7 @@ export default function CategoryDrawer() {
   const [isCategoryHovered, setIsCategoryHovered] = useState(false);
   const [selectedSubCategory, setSelectedSubCategory] = useState(null);
   const [isSubCategoryHovered, setIsSubCategoryHovered] = useState(false);
+  const [isProductCardHovered, setIsProductCardHovered] = useState(false);
 
   const handleCategoryMouseEnter = (category) => {
     setSelectedCategory(category);
@@ -32,6 +33,7 @@ export default function CategoryDrawer() {
   const handleSubCategoryHover = (subcategory) => {
     setSelectedSubCategory(subcategory);
     setIsSubCategoryHovered(true);
+    setIsProductCardHovered(false);
   };
 
   const handleSubCategoryMouseLeave = () => {
@@ -124,7 +126,18 @@ export default function CategoryDrawer() {
                         }}
                       >
                         {subcategoryKey}
+                        {subcategoryKey}
                       </Typography>
+                      {selectedSubCategory === subcategoryKey && (
+                        <ChevronRightIcon
+                          style={{
+                            color:
+                              selectedSubCategory === subcategoryKey
+                                ? "red"
+                                : "inherit",
+                          }}
+                        />
+                      )}
                     </ListItem>
                   )
                 )}
@@ -135,16 +148,14 @@ export default function CategoryDrawer() {
             <Card style={styles.productsCard}>
               {selectedCategory?.subcategories?.[selectedSubCategory].map(
                 (product, pIndex) => (
-                  <ProductImageCard
-                    {...product}
-                    key={pIndex}
-                  />
+                  <ProductImageCard {...product} key={pIndex} />
                 )
               )}
             </Card>
           )}
         </Grid>
       )}
+      {/* <Carousal/> */}
     </Grid>
   );
 }
