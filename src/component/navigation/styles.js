@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 export const styles = {
   mainBox: {
     display: "flex",
@@ -19,5 +20,33 @@ export const styles = {
   productBoxTypography: {
     margin: "0px 12px 0px 30px",
     paddingTop: "5px",
+=======
+export const style = {
+
+  navigationMainBox: {
+    display: "flex",
+    marginLeft: "17rem",
+    width: "80rem",
+    marginTop: "2rem",
+  },
+
+  navigationProductBox: {
+    margin: "2rem",
+    width: "4rem",
+    alignItems: "center",
+  },
+
+  navigationLink: {
+    textDecoration: "none",
+  },
+
+  navigationImage: {
+    height: "6rem",
+  },
+
+  navigationTypography: {
+    textAlign: "center",
+    marginTop: "1rem",
+>>>>>>> 46b5bc6f7decd9c19a17dae907f6488256aee4cf
   },
 };
