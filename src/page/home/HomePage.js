@@ -9,9 +9,9 @@ import Carousel from "../../component/carousal/Carousal";
 import { styles } from "./styles";
 import Footer1 from "../../component/footer/Footer1";
 import Footer2 from "../../component/footer/Footer2";
+import Navigation from "../../component/navigation/Navigation";
 
-const HomePage = () => {  
-
+const HomePage = () => {
   return (
     <>
       <Box style={styles.homePageMainBox}>
@@ -20,9 +20,10 @@ const HomePage = () => {
           <Carousel />
         </Box>
       </Box>
+      <Navigation />
       <ProductCategories />
-      <Footer2/>
-      <Footer1/>
+      <Footer2 />
+      <Footer1 />
     </>
   );
 };
