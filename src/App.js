@@ -8,6 +8,9 @@ import NavBar from "./component/navbar/NavBar";
 import CreateProductPage from "./page/product/CreateProductPage";
 import LoginForm from "./component/form/LoginForm";
 import SignupForm from "./component/form/SignupForm";
+import TermOfUse from "./component/form/TermOfUse";
+import PrivatePolicy from "./component/form/PrivatePolicy";
+
 import { Box } from "@mui/system";
 
 const App=()=> {
@@ -28,6 +31,8 @@ const App=()=> {
             <Route path="/product/create" element={<CreateProductPage />} />
             <Route path="/LoginForm" element={<LoginForm />} />
             <Route path="/SignupForm" element={<SignupForm />} />
+            <Route path="/termsofuse" element={<TermOfUse />} />
+            <Route path="/privacy-policy" element={<PrivatePolicy />} />
           </Routes>
         </Router>
       </Box>

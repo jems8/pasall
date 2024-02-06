@@ -83,7 +83,7 @@ export default function PrimarySearchAppBar() {
           <Button
             style={styles.navbarSignupButton}
             component={Link}
-            href="/SignUp"
+            href="/SignupForm"
           >
             SignUp
           </Button>
@@ -93,7 +93,6 @@ export default function PrimarySearchAppBar() {
             <Select
               labelId="demo-simple-select-label"
               id="demo-simple-select"
-              
             >
               <MenuItem >English</MenuItem>
               <MenuItem >Nepali</MenuItem>
